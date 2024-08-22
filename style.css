@@ -1,0 +1,247 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    border: #1a1a1a;
+  }}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "main main main"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.main {
+  width: 90vw;
+  max-width: 1200px;
+  min-width: 700px;
+  margin: 0 auto;
+
+  /* Mise en place de la grille de mise en page générale
+ */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
+  gap: 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "section01 section01 section01"
+    "section02 section02 section02"
+    "section03 section03 section03"
+    "section04 section04 section04";
+  grid-area: main;
+}
+
+.section01 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-template-rows: 1fr 1fr 1fr;*/
+  gap: 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    "article01 article02 ."
+    ". . .";
+  grid-area: section01;
+  border: black solid 2px;
+}
+
+.article01 {
+  grid-area: article01;
+
+}
+
+.article02 {
+  grid-area: article02;
+  border: black solid 2px;
+}
+
+.section02 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-template-rows: 1fr 1fr 1fr;*/
+  gap: 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    "article03 article04 ."
+    ". . .";
+  grid-area: section02;
+  border: black solid 2px;
+}
+
+.article03 {
+  grid-area: article03;
+  border: black solid 2px;
+}
+
+.article04 {
+  grid-area: article04;
+  border: black solid 2px;
+}
+
+.section03 {
+  display: grid;
+  grid-template-columns: 2fr 0fr 1fr;
+  /* grid-template-rows: 1fr 1fr [art] 1fr;*/
+  gap: 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    "article05 . ."
+    "article06 . .";
+  grid-area: section03;
+  border: black solid 2px;
+}
+
+.article05 {
+  grid-area: article05;
+  border: black solid 2px;
+}
+
+.article06 {
+  grid-area: article06;
+  border: black solid 2px;
+}
+
+.section04 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr;*/
+  gap: 1em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    "article07 article08 ."
+    ". . .";
+  grid-area: section04;
+  border: black solid 2px;
+}
+
+.article07 {
+  grid-area: article07;
+  border: black solid 2px;
+}
+
+.article08 {
+  grid-area: article08;
+  border: black solid 2px;
+}
+
+.footer {
+  grid-area: footer;
+}
+/* gestion des images  */
+
+header figure img,
+section figure img,
+footer figure img {
+  outline: 2px solid #8b6540;
+  max-width: 100%;
+  height: auto;
+  /*
+	   Le navigateur détermine la taille de l’image par rapport à l’élément parent. La hauteur de l’image est ajustée automatiquement.
+
+	   */
+}
+header figure,
+article figure,
+footer figure {
+  margin: auto;
+}
+/* Grilles de mise en page > contenu 
+ */
+
+nav ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+nav li a {
+  color: #666666;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: "Roboto Slab", serif;
+}
+section {
+  padding: 2em;
+}
+article {
+  padding-left: 1.5em;
+}
+figure {
+  padding: 1em;
+}
+p{
+  text-align: left;
+}
+li{
+  text-align: left;
+}
